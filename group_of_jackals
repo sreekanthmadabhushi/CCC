@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+def LeaderSum(array):
+    l=len(array)
+    sum=array[l-1]
+    preLead=sum
+    for j in range(n-1,0,-1):
+        if preLead<array[j-1]:
+            sum=sum+array[j-1]
+            preLead=array[j-1]
+    return sum
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    array = list(map(int, input().strip().split(' ')))
+    result = LeaderSum(array)
+    print(result)
