@@ -1,0 +1,34 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int isHill(int *a,int n)
+{
+    int i=1;
+    while(a[i-1]<a[i] && i<n)
+        i++;
+    while(a[i-1]==a[i] && i<n)
+        i++;
+    while(a[i-1]>a[i] && i<n)
+        i++;
+    if(i==n)
+        return 1;
+    return 0;
+}
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int n;
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+        scanf("%d",(a+i));
+    if(isHill(a,n))
+        printf("yes");
+    else
+        printf("no");
+    return 0;
+}
